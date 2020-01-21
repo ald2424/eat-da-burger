@@ -35,10 +35,10 @@ function printQuestionMarks(num) {
 
 //   Creating an object to export
 var orm ={
-    select: function(tableInput, cd){
+    select: function(tableInput, cb){
         connection.query("SELECT * FROM " + tableInput + ";", function(err, result){
             if (err) throw err;
-            createImageBitmap(result);
+            cb(result);
         })
     },
     insert: function(table, cols, vals, cb){
