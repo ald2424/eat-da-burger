@@ -5,7 +5,10 @@
 <ul>
   {{#each burgers}}
     {{#unless devoured}}
+    <li>
       {{burger_name}}
+     <button class="change-devoure" data-id="{{id}}" data-newdevoure="{{this.devoured}}">Devoure it!</button>
+    </li>
     {{/unless}}
   {{/each}}
 </ul>
@@ -15,7 +18,9 @@
 <ul>
     {{#each burgers}}
     {{#if devoured}}
+    <li>
       {{burger_name}}
+    </li>
     {{/if}}
   {{/each}}
 </ul>

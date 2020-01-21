@@ -51,8 +51,8 @@ var orm ={
         })
     },
     update: function(table, objColVals, condition, cb){
-        connection.query(`UPDATE ${table}
-                          SET ${objToSql(objColVals)} WHERE ${condition}`,
+        connection.query("UPDATE " + table +
+                          " SET " + objToSql(objColVals) + " WHERE " + condition + ";",
                           function(err, result){
                             if(err) throw err;
 
